@@ -8,8 +8,8 @@
 
 ## 서지 정보 (Bibliographic Info)
 
-- **제목 (Title)**: R 프로그래밍 With Workflow Design
-- **저자 (Author)**: 박관영, 김경민
-- **출판사 (Publisher)**: 자유아카데미
-- **초판 발행 (Edition/Year)**: 2025-08
+- **제목**: R 프로그래밍 With Workflow Design
+- **저자**: 박관영, 김경민
+- **출판사**: 자유아카데미
+- **초판 발행**: 2025-08
 - **ISBN**: 9791158087449
