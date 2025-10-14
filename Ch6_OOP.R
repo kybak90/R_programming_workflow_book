@@ -98,7 +98,7 @@ create_design_matrix = function(x_values, knots, degree) {
 }
 
 
-## 원래 데이터와 적합된 스플라인 회귀 곡선을 시각화하는 함수 (S3 메서드 이용)
+## 원래 데이터와 적합된 스플라인 기저함수를 시각화하는 함수 (S3 메서드 이용)
 plot.basis = function(basis_obj, ...) {
   x_values = attr(basis_obj, "x_values")
   
@@ -112,7 +112,7 @@ plot.basis = function(basis_obj, ...) {
 
 
 
-## 스플라인 회귀 적합을 위한 데이터 생성
+## 스플라인 기저함수 계산을 위한 데이터 생성
 degree = 3
 tiny = 1e-5
 knots = c(rep(0 - tiny, degree), 0, 1, 2, 3, 4, rep(4 + tiny, degree))
