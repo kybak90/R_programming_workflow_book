@@ -4,6 +4,17 @@ library(reticulate)
 #use_virtualenv("myenv") : Python 가상 환경을 사용
 #use_condaenv("myenv") :  Conda 가상 환경을 사용
 
+# r-reticulate 환경이 자동으로 생성되지 않을 수 있으므로 명시적으로 생성
+# reticulate 1.41부터는 py_require()를 통한 자동 환경 관리도 지원
+
+# 방법 1: 환경 생성 함수를 직접 호출
+virtualenv_create("r-reticulate")
+
+# 방법 2: 환경이 존재하지 않을 때만 생성
+if (!virtualenv_exists("r-reticulate")) {
+  virtualenv_create("r-reticulate")
+}
+
 use_virtualenv("r-reticulate")
 py_install("numpy")
 np = import("numpy")
@@ -24,6 +35,7 @@ lm(mpg ~ ., data = mtcars)$coefficients
 
 ##  Python의 sklearn.linear_model 모듈을 불러와서 R에서 적합
 ### 모듈 불러오기
+# py_install("scikit-learn")
 skl_lr = import("sklearn.linear_model")
 
 ### 설명 변수와 반응 변수 설정
